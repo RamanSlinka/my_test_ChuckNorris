@@ -29,9 +29,11 @@ export const ChuckNorrisPage = () => {
 
 
     const fetchMoreData = () => {
-        for (let i = 0; i < 10; i++) {
-            dispatch(fetchCardsTC())
-        }
+        setTimeout(function(){
+            for (let i = 0; i < 10; i++) {
+                dispatch(fetchCardsTC())
+            }
+        }, 1500);
     };
 
     return (
