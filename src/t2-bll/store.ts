@@ -11,12 +11,11 @@ export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
-export type AppActionType = ActionsType ;
+export type AppActionType = ActionsType;
 
 export type AppThunkType<ReturnType = void> = ThunkAction<ReturnType,
     AppRootStateType,
     unknown,
     AppActionType>
 
-// @ts-ignore
-window.store = store;
+

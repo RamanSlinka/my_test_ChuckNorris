@@ -1,8 +1,7 @@
 import {cardsAPI, CardType} from "../t3-dal/api";
-import { AppThunkType } from "./store";
+import {AppThunkType} from "./store";
 
 export type ActionsType = setAppPageActionType
-
 export type initialStateType = {
     icon_url: string
     id: string
@@ -10,7 +9,7 @@ export type initialStateType = {
     value: string
 }
 
-const initialState: initialStateType  = {
+const initialState: initialStateType = {
     icon_url: '',
     id: '',
     url: '',
@@ -18,7 +17,7 @@ const initialState: initialStateType  = {
 }
 
 
-export const appReducer = (state= initialState, action: ActionsType): initialStateType => {
+export const appReducer = (state = initialState, action: ActionsType): initialStateType => {
     switch (action.type) {
         case 'APP/SET-CARD':
             return {...state, ...action.cards}
@@ -30,12 +29,11 @@ export const appReducer = (state= initialState, action: ActionsType): initialSta
 export type setAppPageActionType = ReturnType<typeof setAppPageAC>;
 export const setAppPageAC = (cards: CardType) => ({type: 'APP/SET-CARD', cards} as const)
 
-// thunks
+// thunk
 export const fetchCardsTC = (): AppThunkType => {
     return (dispatch) => {
         cardsAPI.getCards()
             .then((res) => {
-
                 dispatch(setAppPageAC(res.data))
             })
     }
