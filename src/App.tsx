@@ -6,10 +6,12 @@ import chuckLogo from "../src/common/chucknorris.png"
 
 function App() {
     const chuckLogo1 = chuckLogo;
-    return (
+       return (
         <div className="App">
             <div>
-                < img src={chuckLogo1} alt="ChuckLogo" className="ChuckLogo"/>
+                <a href="https://api.chucknorris.io/" target="_blank">
+                    < img src={chuckLogo1} alt="ChuckLogo" className="ChuckLogo"/>
+                </a>
             </div>
             <ChuckNorrisPage/>
         </div>

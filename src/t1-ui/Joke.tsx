@@ -9,7 +9,8 @@ type ChuckPropsType = {
 const Joke: FC<ChuckPropsType> = ({jokeCard, img}) => {
     return (
         <div className="jokeWrapper">
-            <img src={img} alt="ChuckFace" className="ChuckFace"/>
+            <img src={img}   alt="ChuckFace" className="ChuckFace"/>
+
             {jokeCard}
         </div>
     )
